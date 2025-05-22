@@ -12,7 +12,7 @@ const HomeLayout = () => {
             </header>
             <main>
                 <Banner></Banner>
-                <Outlet></Outlet>
+                
             </main>
             <footer></footer>
         </div>

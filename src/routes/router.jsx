@@ -1,19 +1,38 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layouts/HomeLayout";
+import Home from "../components/Home";
+import AddRoommate from "../components/AddRoommate";
+import UpdateRoommate from "../components/UpdateRoommate";
 
 const router = createBrowserRouter(
     [
         {
             path:"/",
-            element:<HomeLayout></HomeLayout>
+            Component:Home,
+            children:[
+
+                {
+                    index:true,
+                    Component:HomeLayout
+                },
+                {
+                    path:'addRoommate',
+                    Component:AddRoommate
+                },
+                {
+                    path:'updateRoommate',
+                    Component:UpdateRoommate
+                }
+
+            ]
         },
         {
             path:'/auth',
-            element:<h2>Authentication Layout</h2>
+            Component:<h2>Authentication Layout</h2>
         },
         {
             path:'/*',
-            element:<h2>Error 404</h2>
+            Component:<h2>Error 404</h2>
         },
     ]);
 

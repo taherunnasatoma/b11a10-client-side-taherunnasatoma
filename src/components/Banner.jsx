@@ -1,43 +1,42 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const Banner = () => {
     return (
-        <div className='w-11/12  mx-auto mb-8 '>
-            <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={30}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 3000 }}
-                loop={true}
-            >
-                <SwiperSlide>
-                    <div className='bg-orange-200 h-[600px] flex flex-col justify-center items-center text-center p-10 rounded-xl'>
-                        <h2 className='text-3xl font-bold text-blue-900'>Find Your Perfect Roommate</h2>
-                        <p className='mt-2 text-blue-700'>Easily connect with like-minded individuals in your area.</p>
-                    </div>
-                </SwiperSlide>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto py-10">
+            
+            <div className="bg-orange-200 p-6 rounded-xl flex flex-col items-center text-center shadow">
+                <Player
+                    autoplay
+                    loop
+                    src="/public/Animation - 1747949362266.json"
+                    style={{ height: '300px', width: '200px' }}
+                />
+                <h2 className="text-xl font-bold text-blue-900 mt-4">Find Roommates Easily</h2>
+                <p className="text-blue-700">Search by location, lifestyle & budget in seconds.</p>
+            </div>
 
-                <SwiperSlide>
-                    <div className='bg-orange-300 h-[600px] flex flex-col justify-center items-center text-center p-10 rounded-xl'>
-                        <h2 className='text-3xl font-bold text-white'>Browse Listings Anytime</h2>
-                        <p className='mt-2 text-white'>Search by location, lifestyle, and budget from anywhere.</p>
-                    </div>
-                </SwiperSlide>
+            <div className="bg-green-100 p-6 rounded-xl flex flex-col items-center text-center shadow">
+                <Player
+                    autoplay
+                    loop
+                    src="https://assets6.lottiefiles.com/packages/lf20_1pxqjqps.json"
+                    style={{ height: '300px', width: '200px' }}
+                />
+                <h2 className="text-xl font-bold text-green-900 mt-4">Safe & Secure Profiles</h2>
+                <p className="text-green-700">Connect with verified users only.</p>
+            </div>
 
-                <SwiperSlide>
-                    <div className='bg-orange-400 h-[600px] flex flex-col justify-center items-center text-center p-10 rounded-xl'>
-                        <h2 className='text-3xl font-bold text-white'>Secure and Trusted</h2>
-                        <p className='mt-2 text-white'>Your information is safe. Connect only with verified users.</p>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
+            <div className="bg-pink-100 p-6 rounded-xl flex flex-col items-center text-center shadow">
+                <Player
+                    autoplay
+                    loop
+                    src="https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json"
+                    style={{ height: '300px', width: '200px' }}
+                />
+                <h2 className="text-xl font-bold text-pink-900 mt-4">Browse Listings Anytime</h2>
+                <p className="text-pink-700">Search by location, lifestyle, and budget from anywhere.</p>
+            </div>
         </div>
     );
 };
