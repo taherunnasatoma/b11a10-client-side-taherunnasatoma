@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router";
+import HomeLayout from "../layouts/HomeLayout";
 
 const router = createBrowserRouter(
     [
         {
             path:"/",
-            element:<h2>Home Layout</h2>
+            element:<HomeLayout></HomeLayout>
         },
         {
             path:'/auth',
