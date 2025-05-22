@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router';
 
 import Navbar from '../components/Header/Navbar';
+import Banner from '../components/Banner';
 
 const HomeLayout = () => {
     return (
@@ -10,6 +11,7 @@ const HomeLayout = () => {
                 <Navbar></Navbar>
             </header>
             <main>
+                <Banner></Banner>
                 <Outlet></Outlet>
             </main>
             <footer></footer>
