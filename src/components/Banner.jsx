@@ -16,18 +16,18 @@ const Banner = () => {
                 <p className="text-blue-700">Search by location, lifestyle & budget in seconds.</p>
             </div>
 
-            <div className="bg-green-100 p-6 rounded-xl flex flex-col items-center text-center shadow">
+            <div className="bg-orange-300 p-6 rounded-xl flex flex-col items-center text-center shadow">
                 <Player
                     autoplay
                     loop
                     src="https://assets6.lottiefiles.com/packages/lf20_1pxqjqps.json"
                     style={{ height: '300px', width: '200px' }}
                 />
-                <h2 className="text-xl font-bold text-green-900 mt-4">Safe & Secure Profiles</h2>
-                <p className="text-green-700">Connect with verified users only.</p>
+                <h2 className="text-xl font-bold text-white mt-4">Safe & Secure Profiles</h2>
+                <p className="text-white">Connect with verified users only.</p>
             </div>
 
-            <div className="bg-pink-100 p-6 rounded-xl flex flex-col items-center text-center shadow">
+            <div className="bg-orange-100 p-6 rounded-xl flex flex-col items-center text-center shadow">
                 <Player
                     autoplay
                     loop

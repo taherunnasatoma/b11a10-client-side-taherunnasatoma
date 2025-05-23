@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from './Header/Navbar';
+import Footer from './Footer';
 
 const AddRoommate = () => {
 
@@ -25,8 +27,9 @@ const AddRoommate = () => {
 
   }
     return (
-         <div className="p-6 md:p-12 lg:p-24 bg-gray-50 min-h-screen">
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-10">
+         <div className="p-6 md:p-12 lg:px-24 py-10 bg-gray-50 min-h-screen">
+          <Navbar></Navbar>
+      <div className="max-w-screen-xl mx-auto my-5 bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-10">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-800">Add Roommate Listing</h1>
           <p className="text-gray-500 mt-2">
@@ -102,6 +105,7 @@ const AddRoommate = () => {
           </div>
         </form>
       </div>
+      <Footer></Footer>
     </div>
     );
 };
