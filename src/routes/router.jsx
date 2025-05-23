@@ -3,6 +3,7 @@ import HomeLayout from "../layouts/HomeLayout";
 import Home from "../components/Home";
 import AddRoommate from "../components/AddRoommate";
 import UpdateRoommate from "../components/UpdateRoommate";
+import BrowseListings from "../components/BrowseListings";
 
 const router = createBrowserRouter(
     [
@@ -19,6 +20,11 @@ const router = createBrowserRouter(
                 {
                     path:'addRoommate',
                     Component:AddRoommate
+                },
+                {
+                  path:'browseListing',
+                  Component:BrowseListings
+
                 },
                 {
                     path:'updateRoommate',
