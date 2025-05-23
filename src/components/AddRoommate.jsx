@@ -1,34 +1,44 @@
 import React from 'react';
 import Navbar from './Header/Navbar';
 import Footer from './Footer';
+import Swal from 'sweetalert2';
 
 const AddRoommate = () => {
 
-  const handleAddRoommate=e=>{
+  const handleAddRoommate = e => {
     e.preventDefault();
-    const form =e.target;
-    const formData= new FormData(form);
-    const newRoommate=Object.fromEntries(formData.entries())
+    const form = e.target;
+    const formData = new FormData(form);
+    const newRoommate = Object.fromEntries(formData.entries())
     console.log(newRoommate);
 
     //send roommate data to the db
-    fetch('http://localhost:3000/roommates',{
-      method:'POST',
-     headers: {
-      'content-type':'application/json'
+    fetch('http://localhost:3000/roommates', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
 
       },
-      body:JSON.stringify(newRoommate)
+      body: JSON.stringify(newRoommate)
     })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log('after adding roommate',data)
-    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.insertedId) {
+          console.log('added successfully')
+          Swal.fire({
+            title: "Successfully Added!",
+            icon: "success",
+            draggable: true
+          });
+
+          form.reset()
+        }
+      })
 
   }
-    return (
-         <div className="p-6 md:p-12 lg:px-24 py-10 bg-gray-50 min-h-screen">
-          <Navbar></Navbar>
+  return (
+    <div className="p-6 md:p-12 lg:px-24 py-10 bg-gray-50 min-h-screen">
+      <Navbar></Navbar>
       <div className="max-w-screen-xl mx-auto my-5 bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-10">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-800">Add Roommate Listing</h1>
@@ -107,7 +117,7 @@ const AddRoommate = () => {
       </div>
       <Footer></Footer>
     </div>
-    );
+  );
 };
 
 export default AddRoommate;

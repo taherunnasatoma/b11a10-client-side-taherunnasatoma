@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className='flex justify-between items-center px-4 py-3 shadow-md'>
             <div className='text-2xl font-bold text-primary'>
-                <NavLink to='/'>Find<span className="text-accent">My</span>Roomie</NavLink>
+                <NavLink to='/'>Find<span className="text-gray-200">My</span>Roomie</NavLink>
             </div>
 
             <div className='nav flex gap-5 text-accent'>
@@ -18,7 +18,7 @@ const Navbar = () => {
 
             <div className='flex gap-2'>
                 <button className='btn btn-primary px-10 text-white'>Login</button>
-                <button className='btn border-primary bg-amber-50 px-10'>Register</button>
+                <button className='btn border-primary bg-white px-10'>Register</button>
             </div>
            
         </div>
