@@ -13,6 +13,7 @@ const router = createBrowserRouter(
 
                 {
                     index:true,
+                    loader:()=>fetch('http://localhost:3000/roommates'),
                     Component:HomeLayout
                 },
                 {
@@ -36,4 +37,4 @@ const router = createBrowserRouter(
         },
     ]);
 
-    export default router;
+ export default router;

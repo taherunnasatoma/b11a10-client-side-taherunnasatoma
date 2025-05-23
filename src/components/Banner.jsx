@@ -52,7 +52,7 @@ const Banner = () => {
                 autoplay
                 loop
                 src={slide.src}
-                style={{ height: '400px', width: '300px' }} // ⬆️ Bigger animation
+                style={{ height: '400px', width: '300px' }} 
               />
               <h2 className={`text-3xl md:text-4xl font-extrabold mt-6 ${slide.textColor}`}>{slide.title}</h2>
               <p className={`text-lg md:text-xl mt-2 ${slide.descColor}`}>{slide.desc}</p>
