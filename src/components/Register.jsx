@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from './Header/Navbar';
+import Footer from './Footer';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Register = () => {
+
+    const {createUser}=use(AuthContext);
   const [error, setError] = useState('');
 
   const handleRegister = (e) => {
@@ -26,11 +31,26 @@ const Register = () => {
 
     
     console.log({ name, photoURL, email, password });
+    createUser(email,password)
+    .then(result=>{
+        const user= result.user;
+        console.log(user);
+    })
+    .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+    // ..
+  });
     
   };
 
   return (
+    <div>
+        <Navbar></Navbar>
+    
     <div className="flex justify-center min-h-screen items-center bg-gray-100">
+        
       <div className="card bg-base-100 py-5 w-full max-w-sm shrink-0 shadow-2xl">
         <h2 className="font-bold text-2xl text-center">Register your account</h2>
 
@@ -75,6 +95,8 @@ const Register = () => {
           </form>
         </div>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

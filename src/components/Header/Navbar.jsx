@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../provider/AuthProvider';
 
 
 const Navbar = () => {
+    const {user}=use(AuthContext)
     return (
         <div className='flex justify-between items-center px-4 py-3 shadow-md'>
+            <div>{user && user.email}</div>
             <div className='text-2xl font-bold text-primary'>
                 <NavLink to='/'>Find<span className="text-gray-200">My</span>Roomie</NavLink>
             </div>

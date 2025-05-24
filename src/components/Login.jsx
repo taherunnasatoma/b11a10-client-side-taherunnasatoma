@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from './Header/Navbar';
+import Footer from './Footer';
 
 const Login = () => {
     return (
+        <div>
+            <Navbar></Navbar>
+       
         <div className="flex justify-center items-center min-h-screen bg-gray-100">
             <div className="card bg-base-100 py-5 w-full max-w-sm shadow-2xl">
                 <h2 className="font-bold text-2xl text-center">Login to your account</h2>
@@ -39,6 +44,8 @@ const Login = () => {
                 </div>
             </div>
         </div>
+        <Footer></Footer>
+         </div>
     );
 };
 
