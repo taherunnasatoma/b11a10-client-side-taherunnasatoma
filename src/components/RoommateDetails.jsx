@@ -11,7 +11,7 @@ import Footer from './Footer';
 import Navbar from './Header/Navbar';
 
 const RoommateDetails = () => {
-  const roommate = useLoaderData(); // Load data from loader
+  const roommate = useLoaderData(); 
   const navigate = useNavigate();
 
   const {

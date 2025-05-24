@@ -5,6 +5,10 @@ import AddRoommate from "../components/AddRoommate";
 import UpdateRoommate from "../components/UpdateRoommate";
 import BrowseListings from "../components/BrowseListings";
 import RoommateDetails from "../components/RoommateDetails";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import AuthLayout from "../layouts/AuthLayout";
+import ErrorPage from "../components/ErrorPage";
 
 
 const router = createBrowserRouter(
@@ -36,17 +40,35 @@ const router = createBrowserRouter(
                 {
                     path:'updateRoommate',
                     Component:UpdateRoommate
+                },
+                {
+                    path:'login',
+                    Component:Login
+                },
+                {
+                    path:'register',
+                    Component:Register
                 }
 
             ]
         },
         {
             path:'/auth',
-            Component:<h2>Authentication Layout</h2>
+            Component:AuthLayout,
+            children:[
+                {
+                    path:'login',
+                    Component:Login
+                },
+                {
+                    path:'register',
+                    Component:Register
+                }
+            ]
         },
         {
             path:'/*',
-            Component:<h2>Error 404</h2>
+            Component:ErrorPage
         },
     ]);
 
