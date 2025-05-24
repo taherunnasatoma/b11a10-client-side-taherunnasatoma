@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import Navbar from './Header/Navbar';
 import Footer from './Footer';
 import { AuthContext } from '../provider/AuthProvider';
+import { useLocation, useNavigate } from 'react-router';
 
 const Login = () => {
 
     const {signIn}=use(AuthContext)
+
+    const location = useLocation()
+
+    const navigate =useNavigate()
+    console.log(location)
 
     const handleLogin=e=>{
         e.preventDefault()
@@ -22,6 +28,8 @@ const Login = () => {
 
         const user = result.user;
         console.log(user)
+        navigate(`${location.state?location.state : "/"}`)
+
 
     })
      .catch((error) => {

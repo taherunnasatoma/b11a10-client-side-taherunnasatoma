@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from './Header/Navbar';
 import Footer from './Footer';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../provider/AuthProvider';
 
 const AddRoommate = () => {
+   const { user } = useContext(AuthContext);
 
   const handleAddRoommate = e => {
     e.preventDefault();
@@ -97,16 +99,17 @@ const AddRoommate = () => {
             </select>
           </div>
 
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block font-medium mb-1">User Email</label>
-              <input type="email" value={userEmail} className="input input-bordered w-full bg-gray-100" readOnly />
+              <input type="email" value={user?.email || ''} className="input input-bordered w-full bg-gray-100" readOnly />
             </div>
             <div>
               <label className="block font-medium mb-1">User Name</label>
-              <input type="text" value={userName} className="input input-bordered w-full bg-gray-100" readOnly />
+              <input type="text" value={user?.displayName || ''} className="input input-bordered w-full bg-gray-100" readOnly />
             </div>
-          </div> */}
+          </div>
+
 
           <div>
             <button type="submit" className="btn btn-primary w-full text-white text-lg font-semibold">

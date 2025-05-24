@@ -25,12 +25,12 @@ const Navbar = () => {
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/addRoommate'>Add Roommate</NavLink>
                 <NavLink to='/browseListing'>Browse Listing</NavLink>
-                <NavLink to='/'>My Listing</NavLink>
+                <NavLink to='/my-listings'>My Listing</NavLink>
 
             </div>
 
             <div className='flex gap-2'>
-                <img src="/public/user.png" alt="" />
+                <img className='w-12 rounded full' src={`${user ? user.photoURL : '/user.png'}`} alt="" />
                 {
                     user ? (<button onClick={handleLogout} className='btn btn-primary px-10 text-white'>Logout</button>) : (<>
                         <Link to='/auth/login'><button className='btn btn-primary px-10 text-white'>Login</button></Link>

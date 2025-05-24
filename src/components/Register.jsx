@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import Navbar from './Header/Navbar';
 import Footer from './Footer';
 import { AuthContext } from '../provider/AuthProvider';
+import { useNavigate } from 'react-router';
 
 const Register = () => {
 
-    const {createUser,setUser}=use(AuthContext);
+    const {createUser,setUser,updateUser}=use(AuthContext);
   const [error, setError] = useState('');
+
+  const navigate =useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -34,7 +37,19 @@ const Register = () => {
     createUser(email,password)
     .then(result=>{
         const user= result.user;
-       setUser(user);
+
+        updateUser({displayName:name,photoURL:photoURL})
+        .then(()=>{
+            setUser({...user,displayName:name,photoURL:photoURL});
+            navigate('/')
+
+        })
+        .catch((error)=>{
+          console.log(error) 
+          setUser(user) 
+        })
+
+       
     })
     .catch((error) => {
     const errorCode = error.code;

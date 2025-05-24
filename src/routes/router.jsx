@@ -10,6 +10,8 @@ import Register from "../components/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import ErrorPage from "../components/ErrorPage";
 import PrivateRoute from "../provider/PrivateRoute";
+import MyListings from "../components/MyListings";
+import Loading from "../components/Loading";
 
 
 const router = createBrowserRouter(
@@ -22,7 +24,8 @@ const router = createBrowserRouter(
                 {
                     index: true,
                     loader: () => fetch('http://localhost:3000/roommates'),
-                    Component: HomeLayout
+                    Component: HomeLayout,
+                    hydrateFallbackElement:<Loading></Loading>
                 },
                 {
                     path: 'addRoommate',
@@ -33,36 +36,47 @@ const router = createBrowserRouter(
                     Component: BrowseListings
 
                 },
-                
-               {
+                 {
+                    path: 'my-listings',
+                    element: (
+                        <PrivateRoute>
+                            <MyListings />
+                        </PrivateRoute>
+                    )
+                },
+
+
+                {
                     path: '/roommate/:id',
                     loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                     element: (
                         <PrivateRoute>
                             <RoommateDetails />
                         </PrivateRoute>
+                        
                     )
                 },
+               
 
                
         {
-            path: 'updateRoommate',
-            Component: UpdateRoommate
-        },
-        {
-            path: 'login',
-            Component: Login
-        },
-        {
-            path: 'register',
-            Component: Register
-        }
+                    path: 'updateRoommate',
+                    Component: UpdateRoommate
+                },
+                {
+                    path: 'login',
+                    Component: Login
+                },
+                {
+                    path: 'register',
+                    Component: Register
+                }
 
-    ]
+            ]
         },
-{
-    path: '/auth',
-        Component: AuthLayout,
+        {
+            path: '/auth',
+            Component: AuthLayout,
             children: [
                 {
                     path: 'login',
@@ -73,11 +87,11 @@ const router = createBrowserRouter(
                     Component: Register
                 }
             ]
-},
-{
-    path: '/*',
-        Component: ErrorPage
-},
+        },
+        {
+            path: '/*',
+            Component: ErrorPage
+        },
     ]);
 
 export default router;
