@@ -29,7 +29,11 @@ const router = createBrowserRouter(
                 },
                 {
                     path: 'addRoommate',
-                    Component: AddRoommate
+                    element:(
+                        <PrivateRoute>
+                            <AddRoommate/>
+                        </PrivateRoute>
+                    )
                 },
                 {
                     path: 'browseListing',
@@ -60,7 +64,8 @@ const router = createBrowserRouter(
 
                
         {
-                    path: 'updateRoommate',
+                    path: 'updateRoommate/:id',
+                   loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                     Component: UpdateRoommate
                 },
                 {

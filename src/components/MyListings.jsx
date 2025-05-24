@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import Navbar from './Header/Navbar';
 import Footer from './Footer';
+import Swal from 'sweetalert2';
 
 const MyListings = () => {
   const { user } = useContext(AuthContext);
@@ -20,21 +21,48 @@ const MyListings = () => {
   }, [user]);
 
   const handleDelete = (id) => {
-    const confirm = window.confirm('Are you sure you want to delete this listing?');
-    if (!confirm) return;
 
-    fetch(`https://your-api-url.com/roommates/${id}`, {
-      method: 'DELETE',
-    })
-      .then(res => res.json())
-      .then(() => {
-        setMyListings(prev => prev.filter(item => item._id !== id));
-        alert('Listing deleted successfully!');
-      });
+    console.log(id)
+    Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+    console.log(result.isConfirmed)
+  if (result.isConfirmed) {
+
+//start deleting
+
+fetch(`http://localhost:3000/roommates/${id}`,{
+    method:'DELETE'
+})
+.then(res=>res.json())
+.then(data=>{
+    if(data.deletedCount>0){
+      setMyListings(prev => prev.filter(listing => listing._id !== id));
+        Swal.fire({
+       title: "Deleted!",
+       text: "Your roommate has been deleted.",
+       icon: "success"
+    });
+        
+    }
+})
+
+
+
+    
+  }
+});
+  
   };
 
   const handleUpdate = (id) => {
-    navigate(`/update-listing/${id}`);
+    navigate(`/updateRoommate/${id}`);
   };
 
   return (
