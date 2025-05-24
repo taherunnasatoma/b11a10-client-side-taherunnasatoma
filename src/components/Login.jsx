@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Header/Navbar';
 import Footer from './Footer';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Login = () => {
+
+    const {signIn}=use(AuthContext)
+
+    const handleLogin=e=>{
+        e.preventDefault()
+
+         const form = e.target;
+   
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log({email,password})
+    signIn(email,password)
+    .then(result=>{
+
+        const user = result.user;
+        console.log(user)
+
+    })
+     .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorCode,errorMessage)
+    // ..
+  });
+    
+  };
+
+    
     return (
         <div>
             <Navbar></Navbar>
@@ -13,15 +43,15 @@ const Login = () => {
                 <h2 className="font-bold text-2xl text-center">Login to your account</h2>
 
                 <div className="card-body">
-                    <form className="space-y-4">
+                    <form onSubmit={handleLogin} className="space-y-4">
                         <div>
                             <label className="label">Email</label>
-                            <input type="email" className="input input-bordered w-full" placeholder="Email" />
+                            <input type="email" name='email' className="input input-bordered w-full" placeholder="Email" />
                         </div>
 
                         <div>
                             <label className="label">Password</label>
-                            <input type="password" className="input input-bordered w-full" placeholder="Password" />
+                            <input type="password" name='password' className="input input-bordered w-full" placeholder="Password" />
                         </div>
 
                         <div className="text-right">
