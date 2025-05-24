@@ -9,67 +9,75 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import ErrorPage from "../components/ErrorPage";
+import PrivateRoute from "../provider/PrivateRoute";
 
 
 const router = createBrowserRouter(
     [
         {
-            path:"/",
-            Component:Home,
-            children:[
+            path: "/",
+            Component: Home,
+            children: [
 
                 {
-                    index:true,
-                    loader:()=>fetch('http://localhost:3000/roommates'),
-                    Component:HomeLayout
+                    index: true,
+                    loader: () => fetch('http://localhost:3000/roommates'),
+                    Component: HomeLayout
                 },
                 {
-                    path:'addRoommate',
-                    Component:AddRoommate
+                    path: 'addRoommate',
+                    Component: AddRoommate
                 },
                 {
-                  path:'browseListing',
-                  Component:BrowseListings
+                    path: 'browseListing',
+                    Component: BrowseListings
 
                 },
+                
                {
-                path:'/roommate/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
-                Component:RoommateDetails
-               },
-                {
-                    path:'updateRoommate',
-                    Component:UpdateRoommate
+                    path: '/roommate/:id',
+                    loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                    element: (
+                        <PrivateRoute>
+                            <RoommateDetails />
+                        </PrivateRoute>
+                    )
                 },
-                {
-                    path:'login',
-                    Component:Login
-                },
-                {
-                    path:'register',
-                    Component:Register
-                }
 
-            ]
+               
+        {
+            path: 'updateRoommate',
+            Component: UpdateRoommate
         },
         {
-            path:'/auth',
-            Component:AuthLayout,
-            children:[
+            path: 'login',
+            Component: Login
+        },
+        {
+            path: 'register',
+            Component: Register
+        }
+
+    ]
+        },
+{
+    path: '/auth',
+        Component: AuthLayout,
+            children: [
                 {
-                    path:'login',
-                    Component:Login
+                    path: 'login',
+                    Component: Login
                 },
                 {
-                    path:'register',
-                    Component:Register
+                    path: 'register',
+                    Component: Register
                 }
             ]
-        },
-        {
-            path:'/*',
-            Component:ErrorPage
-        },
+},
+{
+    path: '/*',
+        Component: ErrorPage
+},
     ]);
 
- export default router;
+export default router;
