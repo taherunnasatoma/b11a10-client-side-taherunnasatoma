@@ -4,6 +4,8 @@ import Home from "../components/Home";
 import AddRoommate from "../components/AddRoommate";
 import UpdateRoommate from "../components/UpdateRoommate";
 import BrowseListings from "../components/BrowseListings";
+import RoommateDetails from "../components/RoommateDetails";
+
 
 const router = createBrowserRouter(
     [
@@ -26,6 +28,11 @@ const router = createBrowserRouter(
                   Component:BrowseListings
 
                 },
+               {
+                path:'/roommate/:id',
+                loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                Component:RoommateDetails
+               },
                 {
                     path:'updateRoommate',
                     Component:UpdateRoommate

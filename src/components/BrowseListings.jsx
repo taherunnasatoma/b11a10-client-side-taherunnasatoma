@@ -41,7 +41,7 @@ const BrowseListings = () => {
                   </span>
                 </td>
                 <td>
-                  <Link to={`/details/${item._id}`}>
+                  <Link to={`/roommate/${item._id}`}>
                     <button className="btn btn-sm btn-primary">See More</button>
                   </Link>
                 </td>
