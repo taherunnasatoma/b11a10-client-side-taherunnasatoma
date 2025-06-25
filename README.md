@@ -55,10 +55,12 @@ MONGODB_URI=your_mongodb_connection_string
 
 6.Run the backend server:
       ```bash
-     nodemon Index.js
+      nodemon Index.js
+
 7.Run the frontend development server:
        ```bash
        npm run dev
+
 8.**Live Demo**
 https://remarkable-narwhal-77e941.netlify.app/
 
