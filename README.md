@@ -43,10 +43,11 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
 
 4.Install backend dependencies:
 
-     ```bash
-     git clone https://github.com/taherunnasatoma/b11a10-server-side-taherunnasatoma.git
-     cd b11a10-server-side-taherunnasatoma.git
-     npm install
+      ```bash
+      git clone https://github.com/taherunnasatoma/b11a10-server-side-taherunnasatoma.git
+      cd b11a10-server-side-taherunnasatoma.git
+      npm install
+
 5.Setup environment variables:
 Create a .env file in the /server folder and add:
 
