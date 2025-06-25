@@ -41,4 +41,25 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
       ```bash
       npm install
 
+4.Install backend dependencies:
+
+     ```bash
+     git clone https://github.com/taherunnasatoma/b11a10-server-side-taherunnasatoma.git
+     cd b11a10-server-side-taherunnasatoma.git
+     npm install
+5.Setup environment variables:
+Create a .env file in the /server folder and add:
+
+MONGODB_URI=your_mongodb_connection_string
+
+6.Run the backend server:
+      ```bash
+     nodemon Index.js
+7.Run the frontend development server:
+       ```bash
+       npm run dev
+8.**Live Demo**
+https://remarkable-narwhal-77e941.netlify.app/
+
+
 
