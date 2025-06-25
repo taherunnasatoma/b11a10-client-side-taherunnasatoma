@@ -1,12 +1,44 @@
-# React + Vite
+# Find MyRoomie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+Find MyRoomie is a web platform designed to help individuals find compatible roommates based on location, budget, lifestyle preferences, and interests. Users can create profiles, search for suitable roommates, and explore available listings easily.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Technology Stack
+- **Frontend:** React.js  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Main Features
+- User registration and authentication  
+- Create and manage user profiles  
+- Search roommates by location, budget, and lifestyle preferences  
+- Post and browse roommate listings  
+- Protected routes for user-specific content  
+- Responsive design for mobile and desktop
+
+## Dependencies
+- React  
+- React Router DOM  
+- Axios  
+- Express  
+- Mongoose  
+- dotenv  
+
+
+## Getting Started (Run Locally)
+
+1. **Clone the repository:**  
+   ```bash
+   git clone https://github.com/taherunnasatoma/b11a10-client-side-taherunnasatoma.git
+
+ 2. **Navigate to the project directory:**
+
+
+cd b11a10-client-side-taherunnasatoma.git
+3. **Install frontend dependencies:**
+     npm install
+
+
