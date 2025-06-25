@@ -35,10 +35,10 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
    git clone https://github.com/taherunnasatoma/b11a10-client-side-taherunnasatoma.git
 
  2. **Navigate to the project directory:**
-
-
-cd b11a10-client-side-taherunnasatoma.git
+    ```bash
+   cd b11a10-client-side-taherunnasatoma.git
 3. **Install frontend dependencies:**
+      ```bash
      npm install
 
 
