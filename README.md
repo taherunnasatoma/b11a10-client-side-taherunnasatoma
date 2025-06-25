@@ -57,12 +57,9 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
    ```bash
    nodemon index.js
 
-     
-     
-
-7.**Run the frontend development server:**
-      ```bash
-      npm run dev
+7. **Run the frontend development server:**
+   ```bash
+   npm run dev
 
 8.**Live Demo:**
 
