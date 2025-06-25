@@ -54,14 +54,15 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
    MONGODB_URI=your_mongodb_connection_string
 
 6.**Run the backend server:**
-      ```bash
-      nodemon Index.js
+     ```bash
+     nodemon Index.js
 
 7.**Run the frontend development server:**
-       ```bash
-       npm run dev
+      ```bash
+      npm run dev
 
-8.**Live Demo**
+8.**Live Demo:**
+
 https://remarkable-narwhal-77e941.netlify.app/
 
 
