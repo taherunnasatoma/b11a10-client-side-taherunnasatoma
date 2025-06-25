@@ -36,9 +36,9 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
 
  2. **Navigate to the project directory:**
     ```bash
-   cd b11a10-client-side-taherunnasatoma.git
+    cd b11a10-client-side-taherunnasatoma.git
 3. **Install frontend dependencies:**
       ```bash
-     npm install
+      npm install
 
 
