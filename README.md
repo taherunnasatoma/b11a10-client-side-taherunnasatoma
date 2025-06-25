@@ -24,7 +24,7 @@ Find MyRoomie is a web platform designed to help individuals find compatible roo
 - React Router DOM  
 - Axios  
 - Express  
-- Mongoose  
+- Mongodb  
 - dotenv  
 
 
