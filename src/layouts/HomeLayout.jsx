@@ -16,7 +16,7 @@ const HomeLayout = () => {
     const availableRoommates = roommates.filter(r => r.availability === "available").slice(0, 6)
     return (
         <div>
-            <header className='max-w-screen-xl mx-auto my-3'>
+            <header className=' mx-auto sticky top-0 z-50 bg-white shadow-md '>
                 <Navbar></Navbar>
             </header>
             <main>

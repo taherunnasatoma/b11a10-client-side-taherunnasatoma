@@ -13,8 +13,10 @@ const BrowseListings = () => {
   }, []);
 
   return (
+    <div>
+      <Navbar></Navbar>
     <div className="max-w-screen-xl mx-auto px-4 py-8">
-        <Navbar></Navbar>
+        
       <h1 className="text-3xl mt-6 font-bold mb-6 text-center">Browse All Roommate Listings</h1>
       <div className="overflow-x-auto">
         <table className="table w-full border">
@@ -50,8 +52,12 @@ const BrowseListings = () => {
           </tbody>
         </table>
       </div>
-      <Footer></Footer>
+      
+      
     </div>
+    <Footer></Footer>
+    </div>
+
   );
 };
 

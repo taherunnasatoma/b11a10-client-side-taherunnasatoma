@@ -39,7 +39,7 @@ const AddRoommate = () => {
 
   }
   return (
-    <div className="p-6 md:p-12 lg:px-24 py-10 bg-gray-50 min-h-screen">
+    <div className="">
       <Navbar></Navbar>
       <div className="max-w-screen-xl mx-auto my-5 bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-10">
         <div className="text-center">
