@@ -15,6 +15,10 @@ const HomeLayout = () => {
 
     const [blogs, setBlogs] = useState([]);
 
+    const [sortOrder, setSortOrder] = useState("asc");
+    const [filterType, setFilterType] = useState("all");
+
+
     useEffect(() => {
         fetch('blogData.json')
             .then(res => res.json())
@@ -23,7 +27,21 @@ const HomeLayout = () => {
 
 
     const [roommates, setRoommates] = useState(initialRoommates)
-    const availableRoommates = roommates.filter(r => r.availability === "available").slice(0, 8)
+    let availableRoommates = roommates.filter(r => r.availability === "available");
+
+    
+    if (filterType !== "all") {
+        availableRoommates = availableRoommates.filter(r => r.roomType === filterType);
+    }
+
+   
+    availableRoommates = availableRoommates.sort((a, b) => {
+        return sortOrder === "asc" ? a.rent - b.rent : b.rent - a.rent;
+    });
+
+    
+    availableRoommates = availableRoommates.slice(0, 8);
+
     return (
         <div>
             <header className=' mx-auto sticky top-0 z-50 bg-white shadow-md '>
@@ -32,13 +50,47 @@ const HomeLayout = () => {
             <main>
                 <Banner></Banner>
                 <section className='max-w-screen-xl mx-auto px-4 py-8 bg-gray-100  rounded-2xl'>
-                    <h2 className="text-3xl font-bold text-center mb-8">Featured Roommates</h2>
+                    <h2 className="text-3xl font-bold text-center mb-4">Featured Roommates</h2>
+
+                   
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                        
+                        <div>
+                            <label className="font-semibold mr-2">Sort by Rent:</label>
+                            <select
+                                className="select select-bordered"
+                                value={sortOrder}
+                                onChange={(e) => setSortOrder(e.target.value)}
+                            >
+                                <option value="asc">Low to High</option>
+                                <option value="desc">High to Low</option>
+                            </select>
+                        </div>
+
+                       
+                        <div>
+                            <label className="font-semibold mr-2">Room Type:</label>
+                            <select
+                                className="select select-bordered"
+                                value={filterType}
+                                onChange={(e) => setFilterType(e.target.value)}
+                            >
+                                <option value="all">All</option>
+                                <option value="Single">Single</option>
+                                <option value="Shared">Shared</option>
+                            </select>
+                        </div>
+                    </div>
+
+                
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
                         {availableRoommates.map(roommate => (
-                            <FeaturedRoommate key={roommate._id}
+                            <FeaturedRoommate
+                                key={roommate._id}
                                 roommates={roommates}
                                 setRoommates={setRoommates}
-                                roommate={roommate} />
+                                roommate={roommate}
+                            />
                         ))}
                     </div>
                 </section>
