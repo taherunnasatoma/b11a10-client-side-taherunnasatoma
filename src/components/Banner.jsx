@@ -35,7 +35,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="max-w-screen-xl mx-auto py-10 px-4">
+    <div className="max-w-screen-xl mx-auto py-10 px-2">
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
@@ -47,12 +47,12 @@ const Banner = () => {
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
-            <div className={`p-8 rounded-xl flex flex-col items-center text-center shadow ${slide.bg}`}>
+            <div className={`p-8 rounded-2xl flex flex-col items-center text-center shadow ${slide.bg}`}>
               <Player
                 autoplay
                 loop
                 src={slide.src}
-                style={{ height: '400px', width: '300px' }} 
+                style={{ height: '300px', width: '300px' }} 
               />
               <h2 className={`text-3xl md:text-4xl font-extrabold mt-6 ${slide.textColor}`}>{slide.title}</h2>
               <p className={`text-lg md:text-xl mt-2 ${slide.descColor}`}>{slide.desc}</p>

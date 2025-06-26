@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "How to Find the Right Roommate",
+    "image": "https://i.ibb.co/FLbhnZSk/roommate-feat.jpg",
+    "description": "Learn what to look for in a roommate, including lifestyle compatibility, communication skills, and shared responsibilities."
+  },
+  {
+    "id": 2,
+    "title": "Living on a Budget",
+    "image": "https://i.ibb.co/CsJ1yQHy/article-imgs-1.png",
+    "description": "Tips on how to split expenses, budget groceries, and reduce utility costs while living with roommates."
+  },
+  {
+    "id": 3,
+    "title": "Roommate Agreement Tips",
+    "image": "https://i.ibb.co/gbjvL5gd/shutterstock-2046944132.webp",
+    "description": "Create a clear roommate agreement to avoid conflicts over chores, bills, and guest policies."
+  },
+  {
+    "id": 4,
+    "title": "Healthy Roommate Relationship",
+    "image": "https://i.ibb.co/99gwBCpB/t.jpg",
+    "description": "Explore ways to maintain respect, communication, and balance in your roommate relationship."
+  }
+]

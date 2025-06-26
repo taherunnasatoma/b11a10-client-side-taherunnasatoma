@@ -7,19 +7,15 @@ const FeaturedRoommate = ({roommate}) => {
     _id,
     title,
     location,
-    rent,
-    roomType,
-    lifestyle,
-    description,
-    availability,
+    rent
   } = roommate;
     return (
-   < div className="bg-white border rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
+   < div className="bg-white  rounded-xl shadow-lg p-6 hover:shadow-2xl transition">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p><strong>Location:</strong> {location}</p>
       <p><strong>Rent:</strong> ${rent}</p>
-      <p><strong>Room Type:</strong> {roomType}</p>
-      <p><strong>Lifestyle:</strong> {lifestyle}</p>
+      {/* <p><strong>Room Type:</strong> {roomType}</p>
+      <p><strong>Lifestyle:</strong> {lifestyle}</p> */}
       
       <Link
         to={`/roommate/${_id}`}

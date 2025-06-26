@@ -17,7 +17,7 @@ const Navbar = () => {
     }
     return (
         <div className="sticky top-0 z-50 bg-white shadow-md">
-        <div className='flex justify-between items-center px-36 py-3  shadow-md'>
+        <div className='flex justify-between items-center px-32 py-3  shadow-md'>
             {/* <div>{user && user.email}</div> */}
             <div className='text-2xl font-bold text-primary'>
                 <NavLink to='/'>Find<span className="text-gray-200">My</span>Roomie</NavLink>
