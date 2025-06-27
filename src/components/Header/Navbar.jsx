@@ -28,6 +28,13 @@ const Navbar = () => {
                 <NavLink to='/addRoommate'>Add Roommate</NavLink>
                 <NavLink to='/browseListing'>Browse Listing</NavLink>
                 <NavLink to='/my-listings'>My Listing</NavLink>
+                {
+                  user && <>
+
+                    <NavLink to='/dashboard'>Dashboard</NavLink>
+                  </>
+                }
+              
 
             </div>
 

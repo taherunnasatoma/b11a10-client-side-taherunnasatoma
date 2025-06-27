@@ -12,6 +12,8 @@ import ErrorPage from "../components/ErrorPage";
 import PrivateRoute from "../provider/PrivateRoute";
 import MyListings from "../components/MyListings";
 import Loading from "../components/Loading";
+import DashboardLayout from "../layouts/DashboardLayout";
+import DashboardHome from "../components/Dashboard/DashboardHome";
 
 
 const router = createBrowserRouter(
@@ -25,13 +27,13 @@ const router = createBrowserRouter(
                     index: true,
                     loader: () => fetch('http://localhost:3000/roommates'),
                     Component: HomeLayout,
-                    hydrateFallbackElement:<Loading></Loading>
+                    hydrateFallbackElement: <Loading></Loading>
                 },
                 {
                     path: 'addRoommate',
-                    element:(
+                    element: (
                         <PrivateRoute>
-                            <AddRoommate/>
+                            <AddRoommate />
                         </PrivateRoute>
                     )
                 },
@@ -40,7 +42,7 @@ const router = createBrowserRouter(
                     Component: BrowseListings
 
                 },
-                 {
+                {
                     path: 'my-listings',
                     element: (
                         <PrivateRoute>
@@ -53,14 +55,14 @@ const router = createBrowserRouter(
                 {
                     path: '/roommate/:id',
                     loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
-                    Component:RoommateDetails
+                    Component: RoommateDetails
                 },
-               
 
-               
-        {
+
+
+                {
                     path: 'updateRoommate/:id',
-                   loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
+                    loader: ({ params }) => fetch(`http://localhost:3000/roommates/${params.id}`),
                     Component: UpdateRoommate
                 },
                 {
@@ -88,6 +90,32 @@ const router = createBrowserRouter(
                 }
             ]
         },
+
+
+        {
+            path: "/dashboard",
+            element: (
+                <PrivateRoute>
+                    <DashboardLayout />
+                </PrivateRoute>
+            ),
+            children: [
+                {
+                    index: true,
+                    element: <DashboardHome />
+                },
+
+                {
+                    path: "add-item",
+                    element: <AddRoommate />
+                },
+                {
+                    path: "my-items",
+                    element: <MyListings />
+                }
+            ]
+        },
+
         {
             path: '/*',
             Component: ErrorPage
