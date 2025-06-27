@@ -8,12 +8,13 @@ import RoommateDetails from "../components/RoommateDetails";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import AuthLayout from "../layouts/AuthLayout";
-import ErrorPage from "../components/ErrorPage";
+
 import PrivateRoute from "../provider/PrivateRoute";
 import MyListings from "../components/MyListings";
 import Loading from "../components/Loading";
 import DashboardLayout from "../layouts/DashboardLayout";
 import DashboardHome from "../components/Dashboard/DashboardHome";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter(
